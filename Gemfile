@@ -25,6 +25,8 @@ end
 
 gem 'jquery-rails'
 
+#TODO: Add paperclip for attachments
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
