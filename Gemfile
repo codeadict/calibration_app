@@ -24,7 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem "rails-backbone"
 #TODO: Add paperclip for attachments
 
 # To use ActiveModel has_secure_password
