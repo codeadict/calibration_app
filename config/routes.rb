@@ -1,4 +1,7 @@
 CalibrationApp::Application.routes.draw do
+  resources :sites
+
+
   resources :accounts
 
 

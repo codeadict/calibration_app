@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140722164357) do
+ActiveRecord::Schema.define(:version => 20140724034215) do
 
   create_table "accounts", :force => true do |t|
     t.string   "acc_no"
@@ -26,5 +26,26 @@ ActiveRecord::Schema.define(:version => 20140722164357) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  create_table "sites", :force => true do |t|
+    t.integer  "account_id"
+    t.string   "site_name",    :limit => 150
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city",         :limit => 50
+    t.string   "postcode",     :limit => 15
+    t.string   "contact_name", :limit => 100
+    t.string   "telephone",    :limit => 20
+    t.string   "email"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "sites", ["account_id"], :name => "index_sites_on_account_id"
+  add_index "sites", ["city"], :name => "index_sites_on_city", :unique => true
+  add_index "sites", ["contact_name"], :name => "index_sites_on_contact_name", :unique => true
+  add_index "sites", ["email"], :name => "index_sites_on_email"
+  add_index "sites", ["postcode"], :name => "index_sites_on_postcode", :unique => true
+  add_index "sites", ["site_name"], :name => "index_sites_on_site_name", :unique => true
 
 end
